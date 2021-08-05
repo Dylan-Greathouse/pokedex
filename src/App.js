@@ -6,15 +6,14 @@ import './App.css';
 class App extends Component {
   state = { data: [], loading: true, query: null };
 
-  fetchData = async () => {
+  fetchPokemon = async () => {
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     if (this.state.query) {
       url = url + `?search=${this.state.query}`;
     }
     let response = await fetch(url);
-    console.log(response);
     let data = await response.json();
-    console.log(data);
+    
 
     this.setState({ data, loading: false });
   };
@@ -24,7 +23,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchData();
+    this.fetchPokemon();
   }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PokemonItem from './PokemonItem.js';
-
+import './PokemonList.css';
 class PokemonList extends Component {
     render() { 
         return ( 
