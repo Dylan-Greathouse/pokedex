@@ -13,7 +13,10 @@ class PokemonItem extends Component {
         <li>
             <h3>{this.props.pokedex.pokemon}</h3>
             <p>Type 1: {this.props.pokedex.type_1}</p>
-            <p>Type 2: {this.props.pokedex.type_2}</p>
+            <p>Atk: {this.props.pokedex.attack}</p>
+            <p>Def: {this.props.pokedex.defense}</p>
+            <p>S.Atk: {this.props.pokedex.special_attack}</p>
+            <p>S.Def: {this.props.pokedex.special_defense}</p>
             <p>Ability: {this.props.pokedex.ability_1}</p>
         </li>
     </section>
