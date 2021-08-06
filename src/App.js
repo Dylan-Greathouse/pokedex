@@ -14,7 +14,7 @@ class App extends Component {
      searchParams.set('pokemon', this.state.query);
     }
     if (this.state.sortOrder) {
-      searchParams.set('sort', 'pokemon');
+      searchParams.set('sort', 'species_id');
       searchParams.set('direction', this.state.sortOrder);
     }
     url = url + `?${searchParams.toString()}`;
