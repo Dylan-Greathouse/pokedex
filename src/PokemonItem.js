@@ -18,6 +18,7 @@ class PokemonItem extends Component {
                 <section className='pokemon-info'>
                 <p>Type: {this.props.pokedex.type_1}</p>
                 <p>Ability: {this.props.pokedex.ability_1}</p>
+                <p>species: {this.props.pokedex.species_id}</p>
                 </section>
                 <section className='pokemon-stats'>
                  <p>Atk: {this.props.pokedex.attack}</p>
