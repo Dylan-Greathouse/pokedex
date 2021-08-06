@@ -16,7 +16,7 @@ class PokemonItem extends Component {
         </section>
         <li>
                 <section className='pokemon-info'>
-                <p>Type 1: {this.props.pokedex.type_1}</p>
+                <p>Type: {this.props.pokedex.type_1}</p>
                 <p>Ability: {this.props.pokedex.ability_1}</p>
                 </section>
                 <section className='pokemon-stats'>

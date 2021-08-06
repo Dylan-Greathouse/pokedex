@@ -9,7 +9,7 @@ class App extends Component {
   fetchPokemon = async () => {
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     if (this.state.query) {
-      url = url + `?search=${this.state.query}`;
+      url = url + `?pokemon=${this.state.query}`;
     }
     let response = await fetch(url);
     let data = await response.json();
@@ -33,7 +33,13 @@ class App extends Component {
       <>
       <h1>Pokedex</h1>
       {loading && <h3> LOADING!</h3>}
-      {!loading && <PokemonList pokedex={this.state.data.results} />}
+      {!loading && (
+        <section className='pokemon-input'>
+        <input onChange={this.updateQuery} type='text'></input>
+        <button onClick={this.fetchPokemon}>SEARCH</button>
+      <PokemonList pokedex={this.state.data.results} />
+      </section>
+      )}
       </>
 
      );
