@@ -9,7 +9,7 @@ class App extends Component {
   fetchPokemon = async () => {
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     let searchParams = new URLSearchParams();
-    searchParams.set('perPage', 50);
+    searchParams.set('perPage', 40);
     if (this.state.query) {
      searchParams.set('pokemon', this.state.query);
     }
