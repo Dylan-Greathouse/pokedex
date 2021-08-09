@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PokemonItem from './PokemonItem.js';
+import PokemonCard from './PokemonCard.js';
 import './PokemonList.css';
 class PokemonList extends Component {
     render() { 
@@ -7,7 +7,7 @@ class PokemonList extends Component {
             <>
             <ul>
                 {this.props.pokedex.map((element) => {
-                    return <PokemonItem key={element.pokemon} pokedex={element} />;
+                    return <PokemonCard key={element.pokemon} pokedex={element} />;
                 })}
             </ul>
             </>
