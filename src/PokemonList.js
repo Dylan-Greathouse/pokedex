@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import PokemonItem from './PokemonItem.js';
+import PokemonCard from './PokemonCard.js';
 import './PokemonList.css';
 class PokemonList extends Component {
     render() { 
         return ( 
             <>
             <ul>
+            <section className='cards'>
                 {this.props.pokedex.map((element) => {
-                    return <PokemonItem key={element.pokemon} pokedex={element} />;
+                    return <PokemonCard key={element.pokemon} pokedex={element} />;
                 })}
+            </section>
             </ul>
             </>
 
