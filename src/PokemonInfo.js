@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './PokemonItem.css';
 
 class PokemonInfo extends Component {
     state = { data: {} };
@@ -31,14 +32,19 @@ class PokemonInfo extends Component {
         </section>
         <li>
                 <section className='pokemon-info'>
-                <p>Type: {data.type_1}</p>
-                <p>Ability: {data.ability_1}</p>
+                <p>Type 1: {data.type_1}</p>
+                <p>Type 2: {data.type_2}</p>
+                <p>Egg Group: {data.egg_group_1}</p>
+                <p>Ability 1: {data.ability_1}</p>
+                <p>Ability 2: {data.ability_2}</p>
                 </section>
                 <section className='pokemon-stats'>
-                 <p>Atk: {data.attack}</p>
-                 <p>Def: {data.defense}</p>
-                 <p>S.Atk: {data.special_attack}</p>
-                 <p>S.Def: {data.special_defense}</p>
+                 <p>HP: {data.hp}</p>
+                 <p>ATK: {data.attack}</p>
+                 <p>DEF: {data.defense}</p>
+                 <p>SPD: {data.speed}</p>
+                 <p>S.ATK: {data.special_attack}</p>
+                 <p>S.DEF: {data.special_defense}</p>
                 </section>
            
         </li>

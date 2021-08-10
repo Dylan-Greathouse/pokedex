@@ -6,9 +6,11 @@ class PokemonList extends Component {
         return ( 
             <>
             <ul>
+            <section className='cards'>
                 {this.props.pokedex.map((element) => {
                     return <PokemonCard key={element.pokemon} pokedex={element} />;
                 })}
+            </section>
             </ul>
             </>
 

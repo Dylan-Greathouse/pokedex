@@ -13,7 +13,7 @@ class PokemonContainer extends Component {
     
     let searchParams = new URLSearchParams();
     searchParams.set('page', this.state.page);
-    searchParams.set('perPage', 25);
+    searchParams.set('perPage', 20);
     
     if (this.state.query) {
      searchParams.set('pokemon', this.state.query);
@@ -47,18 +47,24 @@ class PokemonContainer extends Component {
 
   nextPage = async () => {
     await this.setState({ page: this.state.page + 1 });
-    this.fetchData();
+    this.fetchPokemon();
+  };
+
+  nextTenPages = async () => {
+    await this.setState({ page: this.state.page + 10 });
+    this.fetchPokemon();
   };
 
   prevPage  = async () => {
     await this.setState({ page: this.state.page - 1 });
-    this.fetchData();
+    this.fetchPokemon();
   };
 
-  searchThrough = async () => {
-    await this.setState({ page: 1 });
-    this.fetchData();
-};
+  prevTenPages = async () => {
+    await this.setState({ page: this.state.page - 10 });
+    this.fetchPokemon();
+  };
+
 
   componentDidMount() {
     this.fetchPokemon();
@@ -89,8 +95,23 @@ class PokemonContainer extends Component {
         <input onChange={this.updateQuery} placeholder='search through pokedex' type='text'></input>
         </section>
         <section className='btn'>
-        <button onClick={this.fetchPokemon}></button>
+        <button className='search' onClick={this.fetchPokemon}></button>
         </section>
+        <section className='pages'>
+        {this.state.page > 10 &&(
+            <button onClick={this.prevTenPages}>Back 10</button>
+          )}
+          {this.state.page > 1 &&(
+            <button onClick={this.prevPage}>Previous Page</button>
+          )}
+          {this.state.page < 41 &&(
+            <button onClick={this.nextPage}>Next Page</button>
+          )}
+          {this.state.page < 41 &&(
+            <button onClick={this.nextTenPages}>Forward 10</button>
+          )}
+        </section>
+        Page: {this.state.page}
         <PokemonList pokedex={this.state.data.results} />
       </section>
       )}

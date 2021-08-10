@@ -9,7 +9,7 @@ class PokemonCard extends Component {
             <div className='card'>
                 <Link to={`/pokemon/${this.props.pokedex._id}`}>
                     <h3>{pokedex.pokemon}</h3>
-                    <img src={pokedex.url_image} alt='pokemon' />
+                    <img src={pokedex.url_image} height='200' alt='pokemon' />
                 </Link>
             </div>
 
