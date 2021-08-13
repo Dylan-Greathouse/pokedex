@@ -9,10 +9,10 @@ class Header extends Component {
             <header>
                 <h1>Dylan's Pokedex</h1>
                 <div className="links">
-                    <NavLink exact to="/">
+                    <NavLink className='home' exact to="/">
                         Home
                     </NavLink>
-                    <NavLink to="/pokemon">Pokemon List</NavLink>
+                    <NavLink className='pokemon-list' to="/pokemon">Pokemon List</NavLink>
                 </div>
             </header>
         );
